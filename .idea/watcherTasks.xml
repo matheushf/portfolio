@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ProjectTasksOptions">
-    <TaskOptions isEnabled="true">
+    <TaskOptions isEnabled="false">
       <option name="arguments" value="--no-cache --update $FileName$:$FileNameWithoutExtension$.css" />
       <option name="checkSyntaxErrors" value="true" />
       <option name="description" value="Compiles .scss files into .css files" />
@@ -14,7 +14,7 @@
         <array />
       </option>
       <option name="outputFromStdout" value="false" />
-      <option name="program" value="C:/Ruby23-x64/bin/ruby.exe" />
+      <option name="program" value="C:/Ruby23-x64/bin/sass.bat" />
       <option name="scopeName" value="Project Files" />
       <option name="trackOnlyRoot" value="true" />
       <option name="workingDir" value="C:\Users\I15-3542-A30\Zend\workspaces\DefaultWorkspace\angular-try\assets\sass" />
