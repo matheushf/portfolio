@@ -99,17 +99,28 @@ h6 {
 }
 
 .section-heading {
-  margin-bottom: 30px;
+  margin-bottom: 20px;
+}
+
+.content-heading {
+  margin-bottom: 20px;
+  color: rgba(0, 0, 0, 0.62)
 }
 
 .section-heading-spacer {
   float: left;
   width: 200px;
   border-top: 3px solid #e7e7e7;
+  margin-bottom: 20px;
+}
+
+.section-content-spacer {
+  width: 200px;
+  border-top: 3px solid #e7e7e7;
 }
 
 .banner {
-  padding: 100px 0;
+  padding: 50px 0;
   color: #f8f8f8;
   background: url(/images/contact.png) no-repeat center center;
   background-size: cover;
@@ -156,7 +167,7 @@ h6 {
 }
 
 footer {
-  padding: 50px 0;
+  padding: 20px 0;
   background-color: #f8f8f8;
 }
 
