@@ -26,17 +26,17 @@ h6 {
 }
 
 .intro-header {
-  padding-top: 50px; /* If you're making other pages, make sure there is 50px of padding to make sure the navbar doesn't overlap content! */
+  padding-top: -10px; /* If you're making other pages, make sure there is 50px of padding to make sure the navbar doesn't overlap content! */
   padding-bottom: 50px;
   text-align: center;
   color: #f8f8f8;
-  background: url(/images/intro4.png) no-repeat center center;
+  background: url(/images/intro4.jpg) no-repeat center center;
   background-size: cover;
 }
 
 .intro-message {
   position: relative;
-  padding-top: 20%;
+  padding-top: 15%;
   padding-bottom: 20%;
 }
 
@@ -103,7 +103,7 @@ h6 {
 }
 
 .content-heading {
-  margin-bottom: 20px;
+  margin-bottom: 60px;
   color: rgba(0, 0, 0, 0.62)
 }
 
@@ -117,6 +117,33 @@ h6 {
 .section-content-spacer {
   width: 200px;
   border-top: 3px solid #e7e7e7;
+
+  &.skills {
+    margin-bottom: 70px;
+  }
+}
+
+.skill-less-known {
+  margin-top: 60px;
+  margin-bottom: 10px;
+
+  img {
+    max-width: 145px;
+    min-width: 120px;
+    max-height: 120px;
+    min-height: 80px;
+
+    @media (max-width: 767px) {
+      max-width: 100%;
+      min-width: 100%;
+      max-height: auto;
+      min-height: auto;
+    }
+  }
+
+  @media (max-width: 767px) {
+
+  }
 }
 
 .banner {
@@ -175,7 +202,7 @@ p.copyright {
   margin: 15px 0 0;
 }
 
-.container-fluid {
+/*.container-fluid {
   padding-left: 50px;
   padding-right: 50px;
-}
+}*/

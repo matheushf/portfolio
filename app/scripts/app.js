@@ -19,11 +19,6 @@ angular
   ])
   .config(function ($routeProvider) {
     $routeProvider
-      .when('/', {
-        templateUrl: 'views/main.html',
-        controller: 'MainCtrl',
-        controllerAs: 'main'
-      })
       .when('/about', {
         templateUrl: 'views/about.html',
         controller: 'MainCtrl',
@@ -34,10 +29,10 @@ angular
         controller: 'MainCtrl',
         controllerAs: 'resume'
       })
-      .when('/experience', {
-        templateUrl: 'views/experience.html',
+      .when('/skills', {
+        templateUrl: 'views/skills.html',
         controller: 'MainCtrl',
-        controllerAs: 'experience'
+        controllerAs: 'skills'
       })
       .when('/contact', {
         templateUrl: 'views/contact.html',
