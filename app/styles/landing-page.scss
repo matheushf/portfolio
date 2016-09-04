@@ -206,3 +206,11 @@ p.copyright {
   padding-left: 50px;
   padding-right: 50px;
 }*/
+
+.profile-picture {
+  filter: grayscale(100%);
+
+  &:hover {
+    filter: grayscale(0);
+  }
+}

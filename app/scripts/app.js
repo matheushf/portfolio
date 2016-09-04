@@ -24,10 +24,10 @@ angular
         controller: 'MainCtrl',
         controllerAs: 'about'
       })
-      .when('/resume', {
-        templateUrl: 'views/resume.html',
+      .when('/curriculum', {
+        templateUrl: 'views/curriculum.html',
         controller: 'MainCtrl',
-        controllerAs: 'resume'
+        controllerAs: 'curriculum'
       })
       .when('/skills', {
         templateUrl: 'views/skills.html',
