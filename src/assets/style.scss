@@ -1,0 +1,53 @@
+$headers: #006DF0;
+$text: white;
+$bg: red;
+$footer: $bg;
+$green: #91DC5A;
+$red: #D80027;
+
+@mixin center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin transition {
+  transition: all 0.5s ease-out;
+}
+
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  background: $bg;
+  font-family: 'Roboto';
+}
+
+.wrapper {
+  background: $bg;
+  min-height: 100%;
+  display: grid;
+  grid-template-rows: auto auto auto;
+  grid-template-columns: 1fr;
+  grid-template-areas:
+    "header"
+    "content"
+    "footer"
+}
+
+header {
+  grid-area: header;
+  color: $headers;
+
+  img {
+
+  }
+}
+
+header, footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
