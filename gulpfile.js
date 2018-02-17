@@ -1,6 +1,7 @@
 const gulp = require('gulp'),
   webpack = require('gulp-webpack'),
   del = require('del'),
+  runSequence = require('run-sequence'),
   postcss = require('gulp-postcss'),
   sass = require('gulp-sass'),
   csswring = require('csswring'),
@@ -10,14 +11,14 @@ const gulp = require('gulp'),
   browserSync = require('browser-sync').create();
 
 const distDir = './dist';
-const srcStyles = ['src/assets/style.scss'];
+const srcStyles = ['src/assets/*.scss'];
 const srcJs = ['src/*.js'];
 const srcHtml = ['src/*.html'];
 const srcAssets = ['src/assets/**/**.png', 'src/assets/**/fonts/**.*'];
 
 const src = [...srcStyles, ...srcJs, ...srcHtml, ...srcAssets];
 
-gulp.task('styles', ['clean'], () => {
+gulp.task('styles', () => {
   let processors = [
     csswring,
     autoprefixer
@@ -27,10 +28,10 @@ gulp.task('styles', ['clean'], () => {
     .pipe(sass())
     .pipe(postcss(processors))
     .pipe(gulp.dest(distDir + '/assets/'))
-    .pipe(browserSync.stream());
+    .pipe(browserSync.stream({ match: '**/*.css' }));
 });
 
-gulp.task('babel', ['clean'], () => {
+gulp.task('babel', () => {
   gulp.src(srcJs)
     .pipe(babel({
       presets: ['env']
@@ -38,18 +39,18 @@ gulp.task('babel', ['clean'], () => {
     .pipe(gulp.dest(distDir));
 });
 
-gulp.task('webpack', ['clean'], () => {
+gulp.task('webpack', () => {
   return gulp.src(srcJs)
     .pipe(webpack(require('./webpack.config.babel')))
     .pipe(gulp.dest(distDir));
 });
 
-gulp.task('html', ['clean'], () => {
+gulp.task('html', () => {
   return gulp.src(srcHtml)
     .pipe(gulp.dest(distDir));
 });
 
-gulp.task('assets', ['clean'], () => {
+gulp.task('assets', () => {
   return gulp.src(srcAssets)
     .pipe(gulp.dest(`${distDir}/assets/`));
 });
@@ -58,7 +59,9 @@ gulp.task('clean', () => {
   return del(['./dist/**']);
 });
 
-gulp.task('build', ['clean', 'styles', 'webpack', 'html', 'assets']);
+gulp.task('build', () => {
+  return runSequence('clean', 'styles', 'webpack', 'html', 'assets');
+});
 
 gulp.task('serve', ['build'], () => {
   browserSync.init({

@@ -1,0 +1,38 @@
+h1 {
+  color: #c4c4c4;
+  font-family: "Montserrat", sans-serif;
+  font-size: 48px;
+  margin: 0;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+h2 {
+  color: #7c7c7c;
+  font-family: "Montserrat", sans-serif;
+  font-size: 28px;
+  margin: 0 0 60px;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+
+.lightsaber-blade {
+  background: #fff;
+  border-radius: 0 40px 40px 0;
+  display: none;
+  float: left;
+  height: 10px;
+  margin-top: 15px;
+  width: 160px;
+
+  &.blue {
+    box-shadow: 10px 0px 60px 8px rgba(12, 144, 244, 1);
+    margin-right: auto;
+  }
+
+  &.red {
+    box-shadow: 10px 0px 60px 8px #F40C0C;
+    transform: rotate(180deg);
+  }
+}

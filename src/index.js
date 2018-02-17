@@ -1,9 +1,5 @@
-new Vue({
-  el: '#app',
-  data: {
-
-  },
-  methods: {
-
-  }
+$(function () {
+    $(".lightsaber-blade").animate({
+      width: "toggle"
+    });
 });

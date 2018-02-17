@@ -1,6 +1,9 @@
+@import './lightsaber';
+@import './social-links';
+
 $headers: #006DF0;
 $text: white;
-$bg: red;
+$bg: black;
 $footer: $bg;
 $green: #91DC5A;
 $red: #D80027;
@@ -28,26 +31,60 @@ body {
 .wrapper {
   background: $bg;
   min-height: 100%;
+  min-width: 100%;
+  width: 100%;
   display: grid;
-  grid-template-rows: auto auto auto;
-  grid-template-columns: 1fr;
-  grid-template-areas:
-    "header"
-    "content"
-    "footer"
+  grid-gap: 10px;
+  grid-template-columns: repeat(4, 1fr);
 }
 
 header {
-  grid-area: header;
+  display: grid;
+  grid-column: 1 / 5;
   color: $headers;
+  align-self: end;
 
-  img {
+  h1 {
+    // align-self: end;
+  }
 
+  h2 {
+    margin-top: 20px;
+    // align-self: end;
   }
 }
 
 header, footer {
-  display: flex;
+  /* display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: center; */
+}
+
+main {
+  // display: grid;
+  grid-column: 2 / 4;
+  justify-self: center;
+  align-self: end;
+  // grid-template-columns: 1fr 1fr;
+  color: $text;
+  font-size: 16px;
+  // margin: 0 auto;
+
+  p {
+    // grid-column: 2 / 3;
+  }
+
+  .lightsaber-blade {
+    // grid-column: 3 / 3;
+    // float: right;
+    align-self: end;
+    // justify-content: center;
+  }
+}
+
+footer {
+  grid-column: 1 / 5;
+  color: $text;
+  align-self: end;
+  justify-self: center;
 }
