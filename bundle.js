@@ -54,7 +54,7 @@ return /******/ (function(modules) { // webpackBootstrap
 /* 0 */
 /***/ (function(module, exports, __webpack_require__) {
 
-	"use strict";
+	'use strict';
 	
 	var _jqueryMin = __webpack_require__(1);
 	
@@ -64,24 +64,18 @@ return /******/ (function(modules) { // webpackBootstrap
 	
 	(0, _jqueryMin2.default)(function () {
 	
-	  (0, _jqueryMin2.default)(".lightsaber-button").click(function () {
-	    (0, _jqueryMin2.default)(".lightsaber-blade").animate({
-	      width: "toggle"
-	    });
-	  });
+	  (0, _jqueryMin2.default)('nav a').on('click touch', function () {
+	    var section = this.className.split(' ')[0];
 	
-	  (0, _jqueryMin2.default)(".lightsaber-button").click();
-	
-	  (0, _jqueryMin2.default)('nav a').click(function () {
-	    var section = this.className;
+	    // alert('ue ' + section);
 	
 	    (0, _jqueryMin2.default)('nav a').each(function (element) {
 	      (0, _jqueryMin2.default)('main div').hide();
 	      (0, _jqueryMin2.default)(this).removeClass('active');
 	    });
 	
-	    (0, _jqueryMin2.default)("#" + section).show();
-	    (0, _jqueryMin2.default)("." + section).addClass('active');
+	    (0, _jqueryMin2.default)('#' + section).show();
+	    (0, _jqueryMin2.default)('.' + section).addClass('active');
 	  });
 	});
 
