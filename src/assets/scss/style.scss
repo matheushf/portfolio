@@ -2,7 +2,6 @@
 @import './social-links';
 @import './variables';
 // @import 'compass/css3';
-
 @mixin center {
     display: flex;
     justify-content: center;
@@ -47,12 +46,21 @@ header {
     }
 }
 
+@media screen and (max-width: 760px) {
+    header {
+        // grid-column: 1 / 5;
+        padding: 20px;
+    }
+}
+
 @mixin link {
+    a:not(:last-child) {
+        margin-right: 20px;
+    }
     a {
         font-size: 16px;
         text-decoration: none;
         color: $blue;
-        margin-left: 20px;
         display: inline-block;
         &::after {
             content: '';
@@ -65,15 +73,23 @@ header {
         &:hover {
             color: $red;
             transition: color 1s;
-            &::after {
-                width: 100%;
-            }
+
         }
         &.active {
             &::after {
                 width: 100%;
             }
         }
+    }
+
+    @media (pointer: fine) {
+      a {
+        &:hover {
+          &::after {
+            width: 100%;
+          }
+        }
+      }
     }
 }
 
@@ -86,6 +102,10 @@ nav {
     @include link();
 }
 
+@media screen and (max-width: 760px) {
+    nav {}
+}
+
 main {
     grid-column: 2 / 4;
     grid-row: 3 / 4;
@@ -93,6 +113,9 @@ main {
     align-self: center;
     color: $text;
     font-size: 16px;
+    ul {
+        padding: 0;
+    }
     small {
         color: rgba(206, 206, 206, 0.97);
     }
@@ -105,12 +128,28 @@ main {
     }
 }
 
+@media screen and (max-width: 760px) {
+    main {
+        grid-column: 1 / 5;
+        padding: 20px;
+    }
+}
+
 footer {
     grid-column: 1 / 5;
     grid-row: 4 / 5;
     color: $text;
     align-self: end;
     justify-self: center;
+    ul {
+        padding: 0;
+    }
+}
+
+@media screen and (max-width: 760px) {
+    footer {
+        // padding: 20px;
+    }
 }
 
 .hide {

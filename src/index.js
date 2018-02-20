@@ -2,17 +2,10 @@ import $ from '../node_modules/jquery/dist/jquery.min.js';
 
 $(function () {
 
+  $('nav a').on('click touch', function () {
+    let section = this.className.split(' ')[0];
 
-  $(".lightsaber-button").click(function () {
-    $(".lightsaber-blade").animate({
-      width: "toggle"
-    });
-  });
-
-  $(".lightsaber-button").click();
-
-  $('nav a').click(function () {
-    let section = this.className;
+    // alert('ue ' + section);
 
     $('nav a').each(function (element) {
       $('main div').hide();
