@@ -63,6 +63,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
 	(0, _jqueryMin2.default)(function () {
+	
 	  (0, _jqueryMin2.default)(".lightsaber-button").click(function () {
 	    (0, _jqueryMin2.default)(".lightsaber-blade").animate({
 	      width: "toggle"
