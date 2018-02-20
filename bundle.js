@@ -67,8 +67,6 @@ return /******/ (function(modules) { // webpackBootstrap
 	  (0, _jqueryMin2.default)('nav a').on('click touch', function () {
 	    var section = this.className.split(' ')[0];
 	
-	    // alert('ue ' + section);
-	
 	    (0, _jqueryMin2.default)('nav a').each(function (element) {
 	      (0, _jqueryMin2.default)('main div').hide();
 	      (0, _jqueryMin2.default)(this).removeClass('active');
