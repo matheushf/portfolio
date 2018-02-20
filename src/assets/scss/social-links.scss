@@ -37,10 +37,10 @@ html {
     a {
         // IE8
         position: relative;
-        height: 96px;
-        height: 9.6rem;
-        width: 96px;
-        width: 9.6rem;
+        // height: 96px;
+        height: 5.5rem;
+        // width: 96px;
+        width: 5.5rem;
     }
     svg {
         height: 100%;
@@ -60,27 +60,32 @@ html {
 }
 
 .icon-social {
-    transition: background-color .5s, transform .5s ease-out;
+    transition: transform .5s ease-out;
+
     &:hover {
         border-radius: 100%; // IE8
         color: $background;
         fill: $background;
         transform: scale(1.25);
-        transition: background-color .5s, transform .5s ease-out;
+        transition: background .5s, transform .5s ease-out;
     }
     &.github,
     &.email {
-        color: $red;
-        fill: $red;
-        &.hover {
+        color: $gray;
+        fill: $gray;
+        &:hover {
             background: $red;
+            color: white;
+            fill: white;
         }
     }
     &.linkedin {
-        color: $blue;
-        fill: $blue;
-        &.hover {
+        color: $gray;
+        fill: $gray;
+        &:hover {
             background: $blue;
+            color: white;
+            fill: white;
         }
     }
 }

@@ -1,6 +1,8 @@
 // @import './lightsaber';
 @import './social-links';
 @import './variables';
+// @import 'compass/css3';
+
 @mixin center {
     display: flex;
     justify-content: center;
@@ -39,53 +41,48 @@ header {
     grid-row: 1 / 2;
     align-self: start;
     text-align: center;
-
-    h1, h2 {
+    h1,
+    h2 {
         margin-top: 20px;
     }
 }
 
 @mixin link {
-  a {
-    font-size: 16px;
-    text-decoration: none;
-    color: $blue;
-    margin-right: 20px;
-    display: inline-block;
-
-    &::after {
-        content: '';
-        display: block;
-        width: 0;
-        height: 2px;
-        background: $red;
-        transition: width 1s;
-    }
-
-    &:hover {
-        color: $red;
-        transition: color 1s;
-
+    a {
+        font-size: 16px;
+        text-decoration: none;
+        color: $blue;
+        margin-left: 20px;
+        display: inline-block;
         &::after {
-            width: 100%;
+            content: '';
+            display: block;
+            width: 0;
+            height: 2px;
+            background: $red;
+            transition: width 1s;
+        }
+        &:hover {
+            color: $red;
+            transition: color 1s;
+            &::after {
+                width: 100%;
+            }
+        }
+        &.active {
+            &::after {
+                width: 100%;
+            }
         }
     }
-
-    &.active {
-      &::after {
-        width: 100%;
-      }
-    }
-  }
 }
 
 nav {
-    grid-column: 2 / 4;
+    grid-column: 1 / 5;
     grid-row: 2 / 3;
     justify-self: center;
     align-self: center;
     text-align: center;
-
     @include link();
 }
 
@@ -96,19 +93,15 @@ main {
     align-self: center;
     color: $text;
     font-size: 16px;
-
     small {
-      color: rgba(206, 206, 206, 0.97);
+        color: rgba(206, 206, 206, 0.97);
     }
-
     #projects {
-
-      li {
-        list-style: none;
-        margin-bottom: 15px;
-      }
-
-      @include link();
+        li {
+            list-style: none;
+            margin-bottom: 15px;
+        }
+        @include link();
     }
 }
 
@@ -121,24 +114,25 @@ footer {
 }
 
 .hide {
-  display: none;
+    display: none;
 }
 
-h1, h2 {
-  font-family: "Montserrat", sans-serif;
-  text-transform: uppercase;
-  margin: 0;
+h1,
+h2 {
+    font-family: "Montserrat", sans-serif;
+    text-transform: uppercase;
+    margin: 0;
 }
 
 h1 {
-  color: #c4c4c4;
-  font-size: 48px;
-  text-align: center;
-  text-transform: uppercase;
+    color: #c4c4c4;
+    font-size: 48px;
+    text-align: center;
+    text-transform: uppercase;
 }
 
 h2 {
-  color: #7c7c7c;
-  font-family: "Montserrat", sans-serif;
-  font-size: 28px;
+    color: #7c7c7c;
+    font-family: "Montserrat", sans-serif;
+    font-size: 28px;
 }

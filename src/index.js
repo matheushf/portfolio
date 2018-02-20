@@ -1,6 +1,8 @@
 import $ from '../node_modules/jquery/dist/jquery.min.js';
 
 $(function () {
+
+
   $(".lightsaber-button").click(function () {
     $(".lightsaber-blade").animate({
       width: "toggle"

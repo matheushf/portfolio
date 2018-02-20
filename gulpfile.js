@@ -11,7 +11,7 @@ const gulp = require('gulp'),
   browserSync = require('browser-sync').create();
 
 const distDir = './dist';
-const srcStyles = ['src/assets/scss/style.scss'];
+const srcStyles = ['src/assets/scss/style.scss', 'src/assets/scss/*.scss'];
 const srcJs = ['src/*.js'];
 const srcHtml = ['src/*.html'];
 const srcAssets = ['src/assets/**/**.png', 'src/assets/**/fonts/**.*'];
@@ -24,10 +24,10 @@ gulp.task('styles', () => {
     autoprefixer
   ];
 
-  return gulp.src(srcStyles)
+  return gulp.src(srcStyles[0])
     .pipe(sass())
     .pipe(postcss(processors))
-    .pipe(gulp.dest(distDir + '/assets/'))
+    .pipe(gulp.dest(distDir))
     .pipe(browserSync.stream({ match: '**/*.css' }));
 });
 
@@ -60,7 +60,7 @@ gulp.task('clean', () => {
 });
 
 gulp.task('build', () => {
-  runSequence('clean', 'html', 'webpack', 'styles',  'assets');
+  runSequence('clean', 'html', 'webpack', 'styles', 'assets');
 });
 
 gulp.task('serve', ['build'], () => {

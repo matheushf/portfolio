@@ -4,6 +4,7 @@
   "description": "My personal website.",
   "main": "gulpfile.js",
   "scripts": {
+    "build": "gulp build && rm -f ../portfolio-gh-pages/* && cp -R ./dist/** ../portfolio-gh-pages/",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
