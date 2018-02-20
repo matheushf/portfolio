@@ -5,8 +5,6 @@ $(function () {
   $('nav a').on('click touch', function () {
     let section = this.className.split(' ')[0];
 
-    // alert('ue ' + section);
-
     $('nav a').each(function (element) {
       $('main div').hide();
       $(this).removeClass('active');

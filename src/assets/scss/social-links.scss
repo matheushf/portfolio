@@ -38,9 +38,9 @@ html {
         // IE8
         position: relative;
         // height: 96px;
-        height: 5.5rem;
+        height: 4.5rem;
         // width: 96px;
-        width: 5.5rem;
+        width: 4.5rem;
     }
     svg {
         height: 100%;
@@ -83,7 +83,7 @@ html {
         color: $gray;
         fill: $gray;
         &:hover {
-            background: $blue;
+            background: $blueDarker;
             color: white;
             fill: white;
         }

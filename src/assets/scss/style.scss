@@ -67,11 +67,11 @@ header {
             display: block;
             width: 0;
             height: 2px;
-            background: $red;
+            background: $blueDarker;
             transition: width 1s;
         }
         &:hover {
-            color: $red;
+            color: $blueDarker;
             transition: color 1s;
 
         }
@@ -113,6 +113,8 @@ main {
     align-self: center;
     color: $text;
     font-size: 16px;
+    line-height: 1.7em;
+
     ul {
         padding: 0;
     }
@@ -139,7 +141,7 @@ footer {
     grid-column: 1 / 5;
     grid-row: 4 / 5;
     color: $text;
-    align-self: end;
+    align-self: center;
     justify-self: center;
     ul {
         padding: 0;
