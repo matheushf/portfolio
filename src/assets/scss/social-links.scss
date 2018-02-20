@@ -1,0 +1,108 @@
+@import './variables';
+// http://www.paulirish.com/2012/box-sizing-border-box-ftw/
+// Thanks to codepen.io/alaingalvan for suggesting this color variable:
+$background: hsl(210, 45, 10);
+html {
+    box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+}
+
+html {
+    // 10px for rems
+    font-size: .625em;
+}
+
+.soc {
+    display: block;
+    font-size: 0;
+    list-style: none;
+    margin: 0; // IE8
+    // padding: 48px;
+    // padding: 4.8rem;
+    text-align: center;
+    li {
+        display: inline-block; // IE8
+        margin: 12px;
+        margin: 1.2rem;
+    }
+    a,
+    svg {
+        display: block;
+    }
+    a {
+        // IE8
+        position: relative;
+        height: 96px;
+        height: 9.6rem;
+        width: 96px;
+        width: 9.6rem;
+    }
+    svg {
+        height: 100%;
+        width: 100%; // IE8:
+    }
+    em {
+        font-size: 14px;
+        line-height: 1.5;
+        margin-top: -.75em;
+        position: absolute;
+        text-align: center;
+        top: 50%;
+        right: 0;
+        bottom: 0;
+        left: 0;
+    }
+}
+
+.icon-social {
+    transition: background-color .5s, transform .5s ease-out;
+    &:hover {
+        border-radius: 100%; // IE8
+        color: $background;
+        fill: $background;
+        transform: scale(1.25);
+        transition: background-color .5s, transform .5s ease-out;
+    }
+    &.github,
+    &.email {
+        color: $red;
+        fill: $red;
+        &.hover {
+            background: $red;
+        }
+    }
+    &.linkedin {
+        color: $blue;
+        fill: $blue;
+        &.hover {
+            background: $blue;
+        }
+    }
+}
+
+// Using placeholder selectors and @extend (keeps output CSS lean) instead of [class*='icon-'] attribute selector because IE8 doesn't support it :<
+%social-icon-hover {
+    border-radius: 100%; // IE8
+    color: $background;
+    fill: $background;
+    transform: scale(1.25);
+    transition: background-color .5s, transform .5s ease-out;
+}
+
+// Neat color trick, <3 Sass
+@for $i from 1 through 30 {
+    .icon-#{$i} {
+        // IE8
+        color: hsl(1 * 12, 70, 50);
+        fill: hsl(1 * 12, 70, 50);
+        &:hover {
+            background: hsl($i * 12, 70, 50);
+            @extend %social-icon-hover;
+        }
+    }
+}

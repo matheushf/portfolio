@@ -11,7 +11,7 @@ const gulp = require('gulp'),
   browserSync = require('browser-sync').create();
 
 const distDir = './dist';
-const srcStyles = ['src/assets/*.scss'];
+const srcStyles = ['src/assets/scss/style.scss'];
 const srcJs = ['src/*.js'];
 const srcHtml = ['src/*.html'];
 const srcAssets = ['src/assets/**/**.png', 'src/assets/**/fonts/**.*'];
@@ -60,7 +60,7 @@ gulp.task('clean', () => {
 });
 
 gulp.task('build', () => {
-  return runSequence('clean', 'styles', 'webpack', 'html', 'assets');
+  runSequence('clean', 'html', 'webpack', 'styles',  'assets');
 });
 
 gulp.task('serve', ['build'], () => {
@@ -73,7 +73,7 @@ gulp.task('serve', ['build'], () => {
     }
   });
 
-  gulp.watch(srcStyles, ['styles'], browserSync.reload);
+  gulp.watch(srcStyles, ['styles']);
   gulp.watch(srcJs, ['webpack']);
   gulp.watch(srcHtml, ['html']);
   gulp.watch(srcAssets, ['assets']);

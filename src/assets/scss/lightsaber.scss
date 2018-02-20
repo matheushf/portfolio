@@ -1,0 +1,110 @@
+
+
+
+.lightsaber-svg {
+
+}
+
+.lightsaber-svg {
+  transform: rotate(-90deg);
+  width: 160px;
+  height: 16px;
+  align-self: end;
+}
+
+.lightsaber-blade {
+  box-shadow: 10px 0px 60px 8px rgba(12, 144, 244, 1);
+  background: #fff;
+  border-radius: 0 40px 40px 0;
+  display: none;
+  // float: left;
+  height: 160px;
+  margin-top: 15px;
+  width: 16px;
+
+  &.blue {
+    box-shadow: 10px 0px 60px 8px rgba(12, 144, 244, 1);
+    margin-right: auto;
+  }
+
+  &.red {
+    box-shadow: 10px 0px 60px 8px #F40C0C;
+  }
+}
+
+.lightsaber-button {
+  cursor: pointer;
+}
+/* SVG Styles */
+
+.st0 {
+  fill: #040404;
+}
+
+.st1 {
+  fill: url(#SVGID_1_);
+}
+
+.st2 {
+  fill: url(#SVGID_2_);
+}
+
+.st3 {
+  fill: url(#SVGID_3_);
+}
+
+.st4 {
+  fill: url(#SVGID_4_);
+}
+
+.st5 {
+  fill: url(#SVGID_5_);
+}
+
+.st6 {
+  fill: url(#SVGID_6_);
+}
+
+.st7 {
+  fill: url(#SVGID_7_);
+}
+
+.st8 {
+  fill: url(#SVGID_8_);
+}
+
+.st9 {
+  fill: url(#SVGID_9_);
+}
+
+.st10 {
+  fill: #020202;
+}
+
+.st11 {
+  fill: #4A4CA0;
+}
+
+.st12 {
+  fill: url(#SVGID_10_);
+}
+
+.st13 {
+  fill: url(#SVGID_11_);
+}
+
+.st14 {
+  fill: #B8B8B8;
+}
+
+.st15 {
+  fill-rule: evenodd;
+  clip-rule: evenodd;
+  fill: #590E0E;
+}
+
+.st16 {
+  fill-rule: evenodd;
+  clip-rule: evenodd;
+  fill: #B21212;
+}
