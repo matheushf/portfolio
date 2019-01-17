@@ -1,16 +1,8 @@
 // @import './lightsaber';
 @import './social-links';
 @import './variables';
+@import './_mixin';
 // @import 'compass/css3';
-@mixin center {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-@mixin transition {
-    transition: all 0.5s ease-out;
-}
 
 html,
 body {
@@ -19,18 +11,17 @@ body {
 }
 
 body {
-    background: $bg;
-    color: $text;
+    background: var(--bg);
+    color: var(--text);
     font-family: 'Roboto';
 }
 
 .wrapper {
-    background: $bg;
+    background: var(--bg);
     min-height: 100%;
     min-width: 100%;
     width: 100%;
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
     grid-template-columns: repeat(4, 1fr);
     position: relative;
 }
@@ -60,18 +51,18 @@ header {
     a {
         font-size: 16px;
         text-decoration: none;
-        color: $blue;
+        color: var(--blue);
         display: inline-block;
         &::after {
             content: '';
             display: block;
             width: 0;
             height: 2px;
-            background: $blueDarker;
+            background: var(--blue-darker);
             transition: width 1s;
         }
         &:hover {
-            color: $blueDarker;
+            color: var(--blue-darker);
             transition: color 1s;
 
         }
@@ -111,7 +102,7 @@ main {
     grid-row: 3 / 4;
     justify-self: center;
     align-self: center;
-    color: $text;
+    color: var(--text);
     font-size: 16px;
     line-height: 1.7em;
 
@@ -140,9 +131,10 @@ main {
 footer {
     grid-column: 1 / 5;
     grid-row: 4 / 5;
-    color: $text;
+    color: var(--text);
     align-self: center;
     justify-self: center;
+    z-index: 1;
     ul {
         padding: 0;
     }
@@ -169,7 +161,6 @@ h1 {
     color: #c4c4c4;
     font-size: 48px;
     text-align: center;
-    text-transform: uppercase;
 }
 
 h2 {

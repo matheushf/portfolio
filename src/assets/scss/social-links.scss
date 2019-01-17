@@ -71,19 +71,19 @@ html {
     }
     &.github,
     &.email {
-        color: $gray;
-        fill: $gray;
+        color: var(--gray);
+        fill: var(--gray);
         &:hover {
-            background: $red;
+            background: var(--red);
             color: white;
             fill: white;
         }
     }
     &.linkedin {
-        color: $gray;
-        fill: $gray;
+        color: var(--gray);
+        fill: var(--gray);
         &:hover {
-            background: $blueDarker;
+            background: var(--blue-darker);
             color: white;
             fill: white;
         }

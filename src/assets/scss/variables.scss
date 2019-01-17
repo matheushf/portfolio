@@ -1,7 +1,15 @@
-$text: white;
-$bg: black;
-$footer: $bg;
-$red: hsl(5, 70, 50);
-$blue: hsl(190, 80, 50);
-$blueDarker: hsl(205, 90, 50);
-$gray: #B8B8B8;
+:root {
+  --text: white;
+  --bg: black;
+  --footer: --bg;
+  --red: hsl(5, 70, 50);
+  --blue: hsl(190, 80, 50);
+  --blue-darker: hsl(205, 90, 50);
+  --gray: #B8B8B8;
+
+  // challenger
+  --bg-challenger: white;
+  --text-challenger: black;
+  --primary: #4C2470;
+  --primary-light: #a454f0;
+}
