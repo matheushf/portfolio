@@ -18,7 +18,7 @@ const srcAssets = ['src/assets/**/**.png', 'src/assets/**/fonts/**.*'];
 
 const src = [...srcStyles, ...srcJs, ...srcHtml, ...srcAssets];
 
-gulp.task('styles', () => {
+const styles = () => {
   let processors = [
     csswring,
     autoprefixer
@@ -29,41 +29,51 @@ gulp.task('styles', () => {
     .pipe(postcss(processors))
     .pipe(gulp.dest(distDir))
     .pipe(browserSync.stream({ match: '**/*.css' }));
-});
+};
 
-gulp.task('babel', () => {
+const babelTask = () => {
   gulp.src(srcJs)
     .pipe(babel({
       presets: ['env']
     }))
     .pipe(gulp.dest(distDir));
-});
+};
 
-gulp.task('webpack', () => {
+const webpackTask = () => {
   return gulp.src(srcJs)
     .pipe(webpack(require('./webpack.config.babel')))
     .pipe(gulp.dest(distDir));
-});
+};
 
-gulp.task('html', () => {
+const html = () => {
   return gulp.src(srcHtml)
     .pipe(gulp.dest(distDir));
-});
+};
 
-gulp.task('assets', () => {
+const assets = () => {
   return gulp.src(srcAssets)
     .pipe(gulp.dest(`${distDir}/assets/`));
-});
+};
 
-gulp.task('clean', () => {
+const clean = () => {
   return del(['./dist/**']);
-});
+};
 
-gulp.task('build', () => {
-  runSequence('clean', 'html', 'webpack', 'styles', 'assets');
-});
+const watch = () => {
+  console.log('teste')
+  gulp.watch(srcStyles, gulp.series('styles'));
+  gulp.watch(srcJs, gulp.series('webpackTask'));
+  gulp.watch(srcHtml, gulp.series('html'));
+  gulp.watch(srcAssets, gulp.series('assets'));
+  gulp.watch(src).on('change', browserSync.reload);
+}
 
-gulp.task('serve', ['build'], () => {
+const build = () => {
+  gulp.series('clean', 'html', 'webpackTask', 'styles', 'assets');
+};
+
+const serve = () => {
+  console.log('serve');
   browserSync.init({
     server: {
       baseDir: ['./', './dist'],
@@ -72,13 +82,20 @@ gulp.task('serve', ['build'], () => {
       }
     }
   });
+}
 
-  gulp.watch(srcStyles, ['styles']);
-  gulp.watch(srcJs, ['webpack']);
-  gulp.watch(srcHtml, ['html']);
-  gulp.watch(srcAssets, ['assets']);
-  gulp.watch(src).on('change', browserSync.reload);
+const develop = gulp.parallel(serve, watch, build);
 
-});
+module.exports = {
+  serve,
+  watch,
+  build,
+  develop,
+  styles,
+  webpackTask,
+  html,
+  assets,
+  clean
+};
 
-gulp.task('default', ['serve']);
+module.exports.default = develop;
