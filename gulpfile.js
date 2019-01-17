@@ -11,10 +11,10 @@ const gulp = require('gulp'),
   browserSync = require('browser-sync').create();
 
 const distDir = './dist';
-const srcStyles = ['src/assets/scss/style.scss', 'src/assets/scss/*.scss'];
-const srcJs = ['src/*.js'];
-const srcHtml = ['src/*.html'];
-const srcAssets = ['src/assets/**/**.png', 'src/assets/**/fonts/**.*'];
+const srcStyles = ['src/assets/scss/**/*.scss', 'src/assets/libs/**/*.scss|.css'];
+const srcJs = ['src/**/*.js', 'src/assets/**/*.js'];
+const srcHtml = ['src/**/*.html'];
+const srcAssets = ['src/assets/**/**.png|.gif|.jpg', 'src/assets/**/fonts/**.*', 'src/assets/libs/**/*.js', 'src/assets/libs/**/*.css'];
 
 const src = [...srcStyles, ...srcJs, ...srcHtml, ...srcAssets];
 
@@ -60,16 +60,15 @@ const clean = () => {
 };
 
 const watch = () => {
-  console.log('teste')
-  gulp.watch(srcStyles, gulp.series('styles'));
-  gulp.watch(srcJs, gulp.series('webpackTask'));
-  gulp.watch(srcHtml, gulp.series('html'));
-  gulp.watch(srcAssets, gulp.series('assets'));
+  gulp.watch(srcStyles, gulp.series(styles));
+  gulp.watch(srcJs, gulp.series(webpackTask));
+  gulp.watch(srcHtml, gulp.series(html));
+  gulp.watch(srcAssets, gulp.series(assets));
   gulp.watch(src).on('change', browserSync.reload);
 }
 
 const build = () => {
-  gulp.series('clean', 'html', 'webpackTask', 'styles', 'assets');
+  gulp.series(clean, html, webpackTask, styles, assets);
 };
 
 const serve = () => {
