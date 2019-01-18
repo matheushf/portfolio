@@ -5,7 +5,7 @@
   "main": "gulpfile.js",
   "scripts": {
     "start": "gulp",
-    "build": "gulp build && rm -f ../portfolio-gh-pages/* && cp -R ./dist/** ../portfolio-gh-pages/",
+    "build": "gulp build && rm -R -f ../portfolio-gh-pages/* && cp -R ./dist/** ../portfolio-gh-pages/",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {

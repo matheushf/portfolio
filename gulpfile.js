@@ -14,7 +14,13 @@ const distDir = './dist';
 const srcStyles = ['src/assets/scss/**/*.scss', 'src/assets/libs/**/*.scss|.css'];
 const srcJs = ['src/**/*.js', 'src/assets/**/*.js'];
 const srcHtml = ['src/**/*.html'];
-const srcAssets = ['src/assets/**/**.png|.gif|.jpg', 'src/assets/**/fonts/**.*', 'src/assets/libs/**/*.js', 'src/assets/libs/**/*.css'];
+const srcAssets = [
+  'src/assets/**/*.png|.gif|.jpg',
+  'src/assets/**/images/*.*',
+  'src/assets/**/fonts/**.*',
+  'src/assets/libs/**/*.js',
+  'src/assets/libs/**/*.css'
+];
 
 const src = [...srcStyles, ...srcJs, ...srcHtml, ...srcAssets];
 
@@ -27,7 +33,7 @@ const styles = () => {
   return gulp.src(srcStyles[0])
     .pipe(sass())
     .pipe(postcss(processors))
-    .pipe(gulp.dest(distDir))
+    .pipe(gulp.dest(`${distDir}/assets/css/`))
     .pipe(browserSync.stream({ match: '**/*.css' }));
 };
 
@@ -67,9 +73,7 @@ const watch = () => {
   gulp.watch(src).on('change', browserSync.reload);
 }
 
-const build = () => {
-  gulp.series(clean, html, webpackTask, styles, assets);
-};
+const build = gulp.series(clean, html, webpackTask, styles, assets);
 
 const serve = () => {
   console.log('serve');
@@ -83,7 +87,7 @@ const serve = () => {
   });
 }
 
-const develop = gulp.parallel(serve, watch, build);
+const develop = gulp.parallel(serve, watch);
 
 module.exports = {
   serve,
