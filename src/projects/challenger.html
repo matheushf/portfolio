@@ -15,8 +15,8 @@
   <link rel="stylesheet" type="text/css" href="../assets/slick/slick/slick.css">
   <link rel="stylesheet" type="text/css" href="../assets/slick/slick/slick-theme.css">
 
-  <link rel="stylesheet" href="../style.css">
-  <link rel="stylesheet" href="../challenger.css">
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="../assets/css/challenger.css">
 
 </head>
 
@@ -30,7 +30,7 @@
     <header>
       <!-- <div class="lightsaber-blade blue"></div> -->
       <h1 class="title">Challenger</h1>
-      <p>(on progress)</p>
+      <p>Developed on React Native (on progress)</p>
     </header>
 
     <main>
@@ -54,19 +54,25 @@
 
       <div class="prints">
         <div>
+          <img src="../assets/images/login.png">
+        </div>
+        <div>
+          <img src="../assets/images/register.png">
+        </div>
+        <div>
           <img src="../assets/images/home.png">
         </div>
         <div>
-          <img src="../assets/images/login.png">
+          <img src="../assets/images/challenges.png">
         </div>
         <div>
           <img src="../assets/images/story.png">
         </div>
         <div>
-          <img src="../assets/images/home.png">
+          <img src="../assets/images/profile.png">
         </div>
         <div>
-          <img src="../assets/images/login.png">
+          <img src="../assets/images/edit_profile.png">
         </div>
       </div>
     </main>
@@ -107,7 +113,7 @@
 
   </div>
 
-  <script type="text/javascript" src="../../node_modules/jquery/dist/jquery.min.js"></script>
+  <script type="text/javascript" src="../assets/jquery.min.js"></script>
   <script type="text/javascript" src="../assets/slick/slick/slick.min.js"></script>
   <script>
     $(function () {
@@ -119,11 +125,11 @@
       $('.prints').slick({
         // centerMode: true,
         // centerPadding: '50px',
-        // autoplay: true,
+        autoplay: true,
         dots: true,
-        // initialSlide: 1,
-        slidesToShow: 3,
-        slidesToScroll: 1,
+        initialSlide: 1,
+        slidesToShow: 4,
+        slidesToScroll: 2,
         arrows: true,
         infinite: true,
         prevArrow: arrowBack,
